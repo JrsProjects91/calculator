@@ -2,21 +2,70 @@ const calcDisplay = document.querySelector('#display')
 const inputForm = document.querySelector('#input')
 const addButton = document.querySelector('#add')
 const subtractButton = document.querySelector('#subtract')
-const multiplyButton = document.querySelector('multiply')
-const divideButton = document.querySelector('divide')
-const equalButton = document.querySelector('equal')
+const multiplyButton = document.querySelector('#multiply')
+const divideButton = document.querySelector('#divide')
+const equalButton = document.querySelector('#equal')
 
-// function returnInput() {
-//     const val = inputForm.value
-//     inputForm.value = ""
-//     return val
-// }
+let displayString = ""
 
 
-// addButton.addEventListener("click", () => {
-//     let value = returnInput()
+function returnInput() {
+    const val = inputForm.value
+    inputForm.value = ""
+    return val
+}
 
-// })
+function numInputToDisplay(val, op) {
+    const value = Number(val)
+    const operators = '+&/*'
+    if (Number.isNaN(value)) {
+        calcDisplay.textContent = "Not a valid number.."
+    } else
+    {
+        if (displayString == "") {
+            displayString += value + ` ${op} `
+            calcDisplay.textContent = value
+
+        } else {
+            displayString += value + " "
+            calcDisplay.textContent = value
+        }
+
+    }
+    return
+}
+
+
+addButton.addEventListener("click", () => {
+    let value = returnInput()
+    numInputToDisplay(value, '+')
+
+})
+
+
+subtractButton.addEventListener("click", () => {
+    let value = returnInput()
+    numInputToDisplay(value, '-')
+
+})
+
+multiplyButton.addEventListener("click", () => {
+    let value = returnInput()
+    numInputToDisplay(value, '*')
+
+})
+
+divideButton.addEventListener("click", () => {
+    let value = returnInput()
+    numInputToDisplay(value, '/')
+
+})
+equalButton.addEventListener("click", () => {
+    let value = returnInput()
+    numInputToDisplay(value)
+    calcDisplay.textContent = operate(displayString)
+    displayString = ""
+})
 
 function add(a,b) {
     return a + b;
