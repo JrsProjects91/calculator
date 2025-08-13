@@ -1,0 +1,1 @@
+A Web based calculator utilizing vanilla Javascript, CSS and HTML.
