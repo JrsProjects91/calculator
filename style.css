@@ -5,9 +5,47 @@ body {
     align-items: center;
     background-color: lightblue;
     font-size: xx-large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .calc{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 10px;
+    flex: 1 1 0;
+
+}
+
+.calc-container {
+    display: flex;
+
+    width: 600pxs;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    flex:1;
+}
+
+.buttons {
+    display: flex;
+    
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+button {
+    width: 50px;
+    aspect-ratio: 1/1;
+}
+
+.text {
+    padding: 0px;
 }
